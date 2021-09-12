@@ -2,8 +2,6 @@ FROM golang:1.16 AS build
 WORKDIR /go/src/github.com/org/repo
 COPY . .
 
-RUN go mod tidy
-
 RUN go build -o server .
 
 FROM build AS development
